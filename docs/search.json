@@ -12,5 +12,33 @@
     "title": "personal_ws",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Personal Projects",
+    "section": "",
+    "text": "Personal Projects\nHere are some of my personal projects.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Shiny app"
+  },
+  {
+    "objectID": "resume/index.html",
+    "href": "resume/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "projects/index.html#a-shiny-application-to-examine-individual-compensation-for-highly-compensated-executives-and-staff-and-examine-differences-by-nonprofit-size-and-state.",
+    "href": "projects/index.html#a-shiny-application-to-examine-individual-compensation-for-highly-compensated-executives-and-staff-and-examine-differences-by-nonprofit-size-and-state.",
+    "title": "Projects",
+    "section": "A shiny application to examine individual compensation for highly compensated executives and staff and examine differences by nonprofit size and state.",
+    "text": "A shiny application to examine individual compensation for highly compensated executives and staff and examine differences by nonprofit size and state."
   }
 ]
