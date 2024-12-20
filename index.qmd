@@ -1,7 +1,7 @@
 ---
 title: "Mikyas Duga"
 
-# image: headshot.jpg
+image: headshot.jpg
 
 about: 
   template: solana
@@ -18,3 +18,17 @@ about:
       text: Email
       href: mailto:mikyas.duga@gmail.com
 ---
+
+Mikyas Duga is a Data Analyst at BoardSource. When not innovating on data platforms, Mikyas enjoys spending time and playing soccer.
+
+## Education
+
+Rutgers School of Public Health \| Piscataway, NJ MPH in Biostatistics \| Sept 2020 - May 2022
+
+Sewanee: The University of the South \| Sewanee, TN B.S in Chemistry \| Sept 2013 - May 2017
+
+## Experience
+
+BoardSource \| Data Analyst \| August 2024 - present
+
+Rutgers Institute for Health, Health Care Policy & Aging Research \| Graduate Research Assistant \| Feb 2022 - May 2022

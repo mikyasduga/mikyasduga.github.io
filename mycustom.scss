@@ -1,0 +1,29 @@
+
+
+/*-- scss:defaults --*/
+
+// Sass Variables
+// https://quarto.org/docs/output-formats/html-themes.html#sass-variables
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+$theme-ft: #fff4e6;
+$theme-green: darkgreen;
+$theme-black: #001717;
+
+/* Colors */
+$body-bg: $theme-ft;
+
+
+/* Fonts */
+$font-family-sans-serif: "Montserrat", Helvetica, Arial, sans-serif;
+
+
+/*-- scss:rules --*/
+
+.navbar {
+  color: $theme-black;
+  background-color: $theme-black;
+}
+
+

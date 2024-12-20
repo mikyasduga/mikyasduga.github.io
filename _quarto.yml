@@ -18,11 +18,10 @@ website:
 format:
   html:
     theme: 
-      light: flatly
-      dark: slate
+      light: [zephyr, mycustom.scss]
     css: html/styles.scss
     # css: styles.css
-    toc: true
+    toc: false
     page-layout: full
 
 editor: visual
