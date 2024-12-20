@@ -1,11 +1,9 @@
 ---
 title: "Projects"
+listing: 
+  contents: 
+    - "npcomp_2022.qmd"
+  type: default
 ---
 
-## Shiny app for nonprofit individual compensation
-
-<img src="npindcomp_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open(&apos;https://md6332.shinyapps.io/npCompGolem/&apos;, &apos;blank&apos;);"/>
-
-<a href="https://md6332.shinyapps.io/npCompGolem/" target="_blank">Shiny app</a> <br>
-
-## A shiny application to examine individual compensation for highly compensated executives and staff and examine differences by nonprofit size and state.
+## 
