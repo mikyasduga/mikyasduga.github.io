@@ -18,8 +18,9 @@ website:
 format:
   html:
     theme: 
-      light: [zephyr, mycustom.scss]
-    css: html/styles.scss
+      light: [sandstone, mycustom.scss]
+      dark: [solar, mycustom_dark.scss]
+    css: styles.scss
     # css: styles.css
     toc: false
     page-layout: full

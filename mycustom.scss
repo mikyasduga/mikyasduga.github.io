@@ -10,9 +10,12 @@
 $theme-ft: #fff4e6;
 $theme-green: darkgreen;
 $theme-black: #001717;
+$theme-no-soda: #f2f2f2;
+$color1: #000080;
+
 
 /* Colors */
-$body-bg: $theme-ft;
+$body-bg: $theme-no-soda;
 
 
 /* Fonts */
@@ -27,3 +30,6 @@ $font-family-sans-serif: "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 
+/* Other */
+$toc-color: $color1;
+$headings-color: $color1;
