@@ -4,7 +4,6 @@ listing:
   contents: 
     - "npcomp_2022.qmd"
   type: default
-toc: true
 ---
 
 ## 

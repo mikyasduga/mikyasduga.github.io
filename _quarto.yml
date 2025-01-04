@@ -5,11 +5,14 @@ project:
 website:
   title: "Mikyas Duga"
   navbar:
+    
   
     pinned: true
     
     
-    left:
+    right:
+      - text: "Home"
+        href: index.qmd
       - text: "Projects"
         href: projects/index.qmd
       - text: "Resume"
