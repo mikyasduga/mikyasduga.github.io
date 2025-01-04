@@ -1,9 +1,0 @@
----
-title: "Projects"
-listing: 
-  contents: 
-    - "npcomp_2022.qmd"
-  type: default
----
-
-## 
