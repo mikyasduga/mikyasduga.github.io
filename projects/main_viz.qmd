@@ -15,13 +15,14 @@ editor_options:
 
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 library(highcharter)
 library(sjlabelled)
 
 source("functionsg.R")
 
-snap_final <- read_rds("data/snap_df3.rds")
+snap_final <- readr::read_rds("data/snap_df3.rds")
 
 # library(showtext)
 # font_add_google(name = "Montserrat", family = "Montserrat")
@@ -147,7 +148,7 @@ fig2 <- snap_final %>%
                                   hjust = 0.5, size = 14), 
         plot.subtitle = element_text(size = 15))+
   labs(title = "Percent of population receiveing SNAP Benefits by US State and Region", 
-       subtitle = str_wrap("Each gray line shows a state in a US region while the blue line shows the average for each region.\n 
+       subtitle = stringr::str_wrap("Each gray line shows a state in a US region while the blue line shows the average for each region.\n 
                            Relative to other regions, people in the south are more likely to receive SNAP benefits. Despite near record high numbers of people that receive SNAP benefits, the percentage of the population that receive benefits has been on the decline since about 2014.", 
                            width = 95), 
        caption = "Source: U.S. Department of Agriculture")
