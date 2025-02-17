@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "personal_ws",
+    "title": "Mikyas Duga",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Mikyas Duga is a Data Analyst at BoardSource. When not working with data, Mikyas enjoys traveling and playing soccer."
   },
   {
     "objectID": "projects.html",
@@ -40,5 +40,75 @@
     "title": "Projects",
     "section": "A shiny application to examine individual compensation for highly compensated executives and staff and examine differences by nonprofit size and state.",
     "text": "A shiny application to examine individual compensation for highly compensated executives and staff and examine differences by nonprofit size and state."
+  },
+  {
+    "objectID": "projects/index.html#shiny-app-for-nonprofit-individual-compensation",
+    "href": "projects/index.html#shiny-app-for-nonprofit-individual-compensation",
+    "title": "Projects",
+    "section": "",
+    "text": "Shiny app"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Mikyas Duga",
+    "section": "Education",
+    "text": "Education\nRutgers School of Public Health | Piscataway, NJ\nMPH in Biostatistics | Sept 2020 - May 2022\nSewanee: The University of the South | Sewanee, TN\nB.S in Chemistry | Sept 2013 - May 2017"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Mikyas Duga",
+    "section": "Experience",
+    "text": "Experience\nBoardSource | Data Analyst | August 2022 - present\nRutgers Institute for Health, Health Care Policy & Aging Research | Graduate Research Assistant | Feb 2022 - May 2022"
+  },
+  {
+    "objectID": "projects/npcomp_2022.html",
+    "href": "projects/npcomp_2022.html",
+    "title": "Nonprofit Compensation Dashboard",
+    "section": "",
+    "text": "This dashboard allows users to explore individual compensation in nonprofit organizations for executives, board members and other highly compensated positions. The data is sourced from Form 990 IRS data released in 2024. Although this data is publicly available, it’s large, unstructured, and requires considerable cleanup.\nData in this application is limited to the common job titles reported by nonprofits at least fifty times. Individuals who performed their roles as volunteers, those whose compensation was below $1,000 per year and those who served for only part of the year were excluded.\nShiny app"
+  },
+  {
+    "objectID": "projects/npcomp_2022.html#shiny-app-for-nonprofit-individual-compensation",
+    "href": "projects/npcomp_2022.html#shiny-app-for-nonprofit-individual-compensation",
+    "title": "Nonprofit Compensation Dashboard 2022",
+    "section": "",
+    "text": "Shiny app"
+  },
+  {
+    "objectID": "projects/main_viz.html",
+    "href": "projects/main_viz.html",
+    "title": "SNAP Data 1990-2024",
+    "section": "",
+    "text": "Supplemental Nutritional Assistance Program (SNAP) is a program from the US Department of Agriculture that provides nutritional assistance to low income households and individuals. In September 2024, more than 22.5 million households received SNAP benefits. The number of households receiving assistance has stayed above 21 million since April 2020, just below the record amount between 2012 and 2014.\n\n\nCode\nsnap_final %&gt;% \n  filter(state_abbrev == \"US\") %&gt;% \n  hchart(., \"column\",\n         hcaes(x = ym, y = round(snaphh2)),\n         color = nord_silver[5], \n         name = \"Number of households\") %&gt;% \n  hc_title(text = \"Number of US Households Receiving SNAP Benefits\") %&gt;% \n  hc_xAxis(title = list(text = \"\")) %&gt;% \n  hc_yAxis(title = list(text = \"\")) %&gt;% \n  hc_caption(text = \"Source: U.S. Department of Agriculture\") %&gt;% \n  hc_add_theme(hc_theme_cstm())"
+  },
+  {
+    "objectID": "projects/main_viz.html#number-of-households-receiving-benefits",
+    "href": "projects/main_viz.html#number-of-households-receiving-benefits",
+    "title": "SNAP Data 1990-2024",
+    "section": "",
+    "text": "Supplemental Nutritional Assistance Program (SNAP) is a program from the US Department of Agriculture that provides nutritional assistance to low income households and individuals. In September 2024, more than 22.5 million households received SNAP benefits. The number of households receiving assistance has stayed above 21 million since April 2020, just below the record amount between 2012 and 2014.\n\n\nCode\nsnap_final %&gt;% \n  filter(state_abbrev == \"US\") %&gt;% \n  hchart(., \"column\",\n         hcaes(x = ym, y = round(snaphh2)),\n         color = nord_silver[5], \n         name = \"Number of households\") %&gt;% \n  hc_title(text = \"Number of US Households Receiving SNAP Benefits\") %&gt;% \n  hc_xAxis(title = list(text = \"\")) %&gt;% \n  hc_yAxis(title = list(text = \"\")) %&gt;% \n  hc_caption(text = \"Source: U.S. Department of Agriculture\") %&gt;% \n  hc_add_theme(hc_theme_cstm())"
+  },
+  {
+    "objectID": "projects/main_viz.html#benefit-amounts-over-time",
+    "href": "projects/main_viz.html#benefit-amounts-over-time",
+    "title": "SNAP Data 1990-2024",
+    "section": "Benefit amounts over time",
+    "text": "Benefit amounts over time\nCurrent benefits average around $350 per household and about $190 per person. Benefit amounts peaked during the more generous COVID relief period in Nov 2022 averaging $260 per person and $490 per household.\n\n\nCode\nsnap_final %&gt;% \n  filter(state_abbrev == \"US\") %&gt;% \n  hchart(., \"line\",\n         hcaes(x = ym, y= benperhh), \n         color = nord_silver[5], \n         name = \"Benefit amount per household\", \n         tooltip = list(valueDecimals = 0, valuePrefix = \"$\")) %&gt;% \n  hc_add_series(data = snap_final %&gt;%\n                  filter(state_abbrev == \"US\"),\n                \"line\", \n         hcaes(x = ym, y = round(benperp)),\n         color = nord_silver[1],\n         name = \"Benefit amount per person\", \n         tooltip = list(valueDecimals = 0, valuePrefix = \"$\")) %&gt;% \n  hc_title(text = \"Benefit Amounts per Household and per Person\") %&gt;%\n  hc_xAxis(title = list(text = \"\")) %&gt;% \n  hc_yAxis(title = list(text = \"\")) %&gt;% \n  hc_caption(text = \"Source: U.S. Department of Agriculture\") %&gt;% \n  hc_add_theme(hc_theme_cstm())"
+  },
+  {
+    "objectID": "projects/main_viz.html#comparisons-at-the-state-and-regional-levels",
+    "href": "projects/main_viz.html#comparisons-at-the-state-and-regional-levels",
+    "title": "SNAP Data 1990-2024",
+    "section": "Comparisons at the state and regional levels",
+    "text": "Comparisons at the state and regional levels\n\n\n\nCode\nfig2 &lt;- snap_final %&gt;% \n  filter(!is.na(region_name)) %&gt;% \n  ggplot(aes(x = ym, y = pct_snapp3))+\n  geom_line(aes(group = state_abbrev),\n            alpha = 0.3, \n             col = Maizgray) +\n  geom_smooth(method = \"loess\", col = nord_silver[5])+\n  facet_wrap(~region_name, \n             nrow = 1)+\n  custom_style3()+\n  scale_y_continuous(name = NULL, \n                     labels = add_pct_sign)+\n  scale_x_date(name = NULL)+\n  theme(plot.background = element_rect(fill = \"#F0F0F0\"), \n        strip.background = element_rect(color =  \"#bfbfbf\",\n                                        fill = \"#bfbfbf\"), \n        strip.text = element_text(family = \"Montserrat\",\n                                  hjust = 0.5, size = 14), \n        plot.subtitle = element_text(size = 15))+\n  labs(title = \"Percent of population receiveing SNAP Benefits by US State and Region\", \n       subtitle = str_wrap(\"Each gray line shows a state in a US region while the blue line shows the average for each region.\\n \n                           Relative to other regions, people in the south are more likely to receive SNAP benefits. Despite near record high numbers of people that receive SNAP benefits, the percentage of the population that receive benefits has been on the decline since about 2014.\", \n                           width = 95), \n       caption = \"Source: U.S. Department of Agriculture\")\n\n\nfig2"
+  },
+  {
+    "objectID": "projects/main_viz.html#notes",
+    "href": "projects/main_viz.html#notes",
+    "title": "SNAP Data 1990-2024",
+    "section": "Notes",
+    "text": "Notes\nData was sourced from Harvard Dataverse. Ten year state and national population data used to calculate the percentage of the population that receives SNAP benefits was obtained from the USDA. There were some irregularities in the data where a large jump or decline (&gt; 40%) in participation rates in a particular month is followed by a large drop-off or jump (&gt; 40%) in the next month. In cases where there were such large irregularities between two consecutive months, observations were set to missing. The code for the project is available on github."
   }
 ]
