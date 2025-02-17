@@ -1,0 +1,17 @@
+---
+title: "Nonprofit Compensation Dashboard"
+description: "A Shiny application to examine individual compensation for highly compensated executives and staff and examine differences by nonprofit size and state."
+image: "npcomp2024.png"
+---
+
+This dashboard allows users to explore individual compensation in nonprofit organizations for executives, board members and other highly compensated positions. The data is sourced from [Form 990 IRS data](https://www.irs.gov/charities-non-profits/form-990-series-downloads) released in 2024. Although this data is publicly available, it's large, unstructured, and requires considerable cleanup.\
+
+[![Nonprofit compensation 2024](images/npcomp2024.png)](https://md6332.shinyapps.io/NonprofitComp2024/)
+
+Data in this application is limited to the common job titles reported by nonprofits at least fifty times. Individuals who performed their roles as volunteers, those whose compensation was below \$1,000 per year and those who served for only part of the year were excluded.
+
+<br>
+
+<a href="https://md6332.shinyapps.io/Nonprofitcomp2024/" target="_blank">Shiny app</a> <br>
+
+## 
