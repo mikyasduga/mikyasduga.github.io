@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "resume/index.html",
+    "href": "resume/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Mikyas Duga",
@@ -19,12 +26,5 @@
     "title": "Mikyas Duga",
     "section": "Experience",
     "text": "Experience\nBoardSource | Data Analyst | August 2022 - present\nRutgers Institute for Health, Health Care Policy & Aging Research | Graduate Research Assistant | Feb 2022 - May 2022"
-  },
-  {
-    "objectID": "resume/index.html",
-    "href": "resume/index.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Download current CV"
   }
 ]
