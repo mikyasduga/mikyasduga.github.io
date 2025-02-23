@@ -19,7 +19,7 @@ img_dir <- paste0(getwd(), "/img")
 
 ## gets rid of legend and axis labels (x). 
 custom_style2 <- function() {
-  font <- "Montserrat"
+  font <- "Gill Sans MT"
   
   ggplot2::theme(
     
@@ -106,7 +106,7 @@ prepbar <- function(df, v,...) {
 
 ## custom style 2 with major panel grids added for y axis. 
 custom_style3 <- function() {
-  font <- "Montserrat"
+  font <- "Gill Sans MT"
   
   ggplot2::theme(
     
@@ -189,75 +189,95 @@ remove_period <- function(x) {
 }
 
 
-thm <- hc_theme(
-  chart = list(
-    backgroundColor = "#f4fcfe", 
-    style = list(
-      fontFamily = "Montserrat"
+# thm <- hc_theme(
+#   chart = list(
+#     backgroundColor = "#f4fcfe", 
+#     style = list(
+#       fontFamily = "Montserrat"
+#     )
+#   ), 
+#   title = list(align = 'left', 
+#                style = list(fontweight = "bold")), 
+#   subtitle = list(align = 'left')
+# )
+
+
+# hc_theme_cstm <- function (...) {  ## A custom theme adopted from 538
+#   theme <- list(
+#     colors = c("#FF2700", "#008FD5", "#77AB43", "#636464", "#C4C4C4"),
+#     chart = list(
+#       backgroundColor = "#F0F0F0",
+#       plotBorderColor = "#606063",
+#       style = list(fontFamily = "Montserrat", color = "#3C3C3C")
+#     ),
+#     title = list(align = "left", style = list(fontWeight = "bold")),
+#     subtitle = list(align = "left"),
+#     caption = list(align = "right"),
+#     xAxis = list(
+#       gridLineWidth = 1,
+#       gridLineColor = "#D7D7D8",
+#       labels = list(style = list(
+#         fontFamily = "Montserrat", color = "#3C3C3C"
+#       )),
+#       lineColor = "#D7D7D8",
+#       minorGridLineColor = "#505053",
+#       tickColor = "#D7D7D8",
+#       tickWidth = 1,
+#       title = list(style = list(color = "#A0A0A3"))
+#     ),
+#     yAxis = list(
+#       gridLineColor = "#D7D7D8",
+#       labels = list(style = list(
+#         fontFamily = "Montserrat", color = "#3C3C3C"
+#       )),
+#       lineColor = "#D7D7D8",
+#       minorGridLineColor = "#505053",
+#       tickColor = "#D7D7D8",
+#       tickWidth = 1,
+#       title = list(style = list(color = "#A0A0A3"))
+#     ),
+#     tooltip = list(
+#       backgroundColor = "rgba(0, 0, 0, 0.85)",
+#       style = list(color = "#F0F0F0")
+#     ),
+#     legend = list(
+#       itemStyle = list(color = "#3C3C3C"),
+#       itemHiddenStyle = list(color = "#606063")
+#     ),
+#     credits = list(style = list(color = "black")),
+#     labels = list(style = list(color = "#D7D7D8")),
+#     legendBackgroundColor = "rgba(0, 0, 0, 0.5)",
+#     background2 = "#505053",
+#     dataLabelsColor = "#B0B0B3",
+#     textColor = "#C0C0C0",
+#     contrastTextColor = "#F0F0F3",
+#     maskColor = "rgba(255,255,255,0.3)"
+#   )
+#   theme <- structure(theme, class = "hc_theme")
+#   if (length(list(...)) > 0) {
+#     theme <- hc_theme_merge(theme, hc_theme(...))
+#   }
+#   theme
+# }
+
+## styling options for ggiraph plots. 
+options_girafe <- function(x){
+  
+  x %>% 
+    girafe_options(
+      opts_hover(css = "fill:#003366;"),
+      opts_zoom(min = 0.5,
+                max = 0.9)
+      ,
+      opts_tooltip(css = "background-color:white;color:black;padding:10px;font-family:Gill Sans MT;font-size:18px;", opacity = 0.9
+                   # use_fill = TRUE)
+                   
+      )
     )
-  ), 
-  title = list(align = 'left', 
-               style = list(fontweight = "bold")), 
-  subtitle = list(align = 'left')
-)
-
-
-hc_theme_cstm <- function (...) {  ## A custom theme adopted from 538
-  theme <- list(
-    colors = c("#FF2700", "#008FD5", "#77AB43", "#636464", "#C4C4C4"),
-    chart = list(
-      backgroundColor = "#F0F0F0",
-      plotBorderColor = "#606063",
-      style = list(fontFamily = "Montserrat", color = "#3C3C3C")
-    ),
-    title = list(align = "left", style = list(fontWeight = "bold")),
-    subtitle = list(align = "left"),
-    caption = list(align = "right"),
-    xAxis = list(
-      gridLineWidth = 1,
-      gridLineColor = "#D7D7D8",
-      labels = list(style = list(
-        fontFamily = "Montserrat", color = "#3C3C3C"
-      )),
-      lineColor = "#D7D7D8",
-      minorGridLineColor = "#505053",
-      tickColor = "#D7D7D8",
-      tickWidth = 1,
-      title = list(style = list(color = "#A0A0A3"))
-    ),
-    yAxis = list(
-      gridLineColor = "#D7D7D8",
-      labels = list(style = list(
-        fontFamily = "Montserrat", color = "#3C3C3C"
-      )),
-      lineColor = "#D7D7D8",
-      minorGridLineColor = "#505053",
-      tickColor = "#D7D7D8",
-      tickWidth = 1,
-      title = list(style = list(color = "#A0A0A3"))
-    ),
-    tooltip = list(
-      backgroundColor = "rgba(0, 0, 0, 0.85)",
-      style = list(color = "#F0F0F0")
-    ),
-    legend = list(
-      itemStyle = list(color = "#3C3C3C"),
-      itemHiddenStyle = list(color = "#606063")
-    ),
-    credits = list(style = list(color = "black")),
-    labels = list(style = list(color = "#D7D7D8")),
-    legendBackgroundColor = "rgba(0, 0, 0, 0.5)",
-    background2 = "#505053",
-    dataLabelsColor = "#B0B0B3",
-    textColor = "#C0C0C0",
-    contrastTextColor = "#F0F0F3",
-    maskColor = "rgba(255,255,255,0.3)"
-  )
-  theme <- structure(theme, class = "hc_theme")
-  if (length(list(...)) > 0) {
-    theme <- hc_theme_merge(theme, hc_theme(...))
-  }
-  theme
+  
 }
+
+
+
 
 
