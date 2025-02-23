@@ -106,7 +106,7 @@ prepbar <- function(df, v,...) {
 
 ## custom style 2 with major panel grids added for y axis. 
 custom_style3 <- function() {
-  font <- "Gill Sans MT"
+  font <- "Montserrat"
   
   ggplot2::theme(
     
