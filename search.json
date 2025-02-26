@@ -7,6 +7,41 @@
     "text": "Download current CV"
   },
   {
+    "objectID": "projects/main_viz.html",
+    "href": "projects/main_viz.html",
+    "title": "SNAP Data 1990-2024",
+    "section": "",
+    "text": "Supplemental Nutritional Assistance Program (SNAP) is a program by the US Department of Agriculture that provides nutritional assistance to low income households and individuals. In September 2024, more than 22.5 million households received SNAP benefits. The number of households receiving assistance has stayed above 21 million since April 2020, just below the record amount between 2012 and 2014.\n\n\nCode\nfig_basic &lt;- snap_final %&gt;%\n  filter(state_abbrev == \"US\") %&gt;%\n  rename(date = ym) %&gt;%\n  ggplot(aes(x = date, y = snaphh2)) +\n  geom_col_interactive(aes(\n    tooltip = paste0(\n      lubridate::month(monthno, label = T), \" \", \n      year,\n      \"&lt;br&gt;\",\n      \"Number of households: \",\n      scales::comma(snaphh2),\n      \"&lt;br&gt;\"\n    )\n  ), alpha = 0.5, fill = nord_silver[5]) +\n  custom_style3() +\n  scale_x_date(name = NULL) +\n  scale_y_continuous(name = NULL, labels = scales::comma) +\n  labs(title = \"Number of US Households Receiving SNAP Benefits\")\n\nggiraph::girafe(ggobj = fig_basic) %&gt;% \n  options_girafe()\n\n\n\n\nSource: U.S. Department of Agriculture 2024"
+  },
+  {
+    "objectID": "projects/main_viz.html#number-of-households-receiving-benefits",
+    "href": "projects/main_viz.html#number-of-households-receiving-benefits",
+    "title": "SNAP Data 1990-2024",
+    "section": "",
+    "text": "Supplemental Nutritional Assistance Program (SNAP) is a program by the US Department of Agriculture that provides nutritional assistance to low income households and individuals. In September 2024, more than 22.5 million households received SNAP benefits. The number of households receiving assistance has stayed above 21 million since April 2020, just below the record amount between 2012 and 2014.\n\n\nCode\nfig_basic &lt;- snap_final %&gt;%\n  filter(state_abbrev == \"US\") %&gt;%\n  rename(date = ym) %&gt;%\n  ggplot(aes(x = date, y = snaphh2)) +\n  geom_col_interactive(aes(\n    tooltip = paste0(\n      lubridate::month(monthno, label = T), \" \", \n      year,\n      \"&lt;br&gt;\",\n      \"Number of households: \",\n      scales::comma(snaphh2),\n      \"&lt;br&gt;\"\n    )\n  ), alpha = 0.5, fill = nord_silver[5]) +\n  custom_style3() +\n  scale_x_date(name = NULL) +\n  scale_y_continuous(name = NULL, labels = scales::comma) +\n  labs(title = \"Number of US Households Receiving SNAP Benefits\")\n\nggiraph::girafe(ggobj = fig_basic) %&gt;% \n  options_girafe()\n\n\n\n\nSource: U.S. Department of Agriculture 2024"
+  },
+  {
+    "objectID": "projects/main_viz.html#benefit-amounts-over-time",
+    "href": "projects/main_viz.html#benefit-amounts-over-time",
+    "title": "SNAP Data 1990-2024",
+    "section": "Benefit amounts over time",
+    "text": "Benefit amounts over time\nCurrent benefits average around $350 per household and about $190 per person. Benefit amounts peaked during the more generous COVID relief period in Nov 2022 averaging $260 per person and $490 per household.\n\n\nCode\nfig2 &lt;- snap_final %&gt;%\n  filter(state_abbrev == \"US\") %&gt;%\n  select(state_abbrev, ym, benperhh, benperp, monthno, year) %&gt;%\n  rename(date = ym, benefits_per_household = benperhh) %&gt;%\n  ggplot() +\n  geom_line_interactive(\n    aes(x = date, y = benefits_per_household, group = 1),\n    col = nord_silver[5],\n    na.rm = TRUE,\n    linewidth = 1\n  ) +\n  geom_point_interactive(\n    aes(\n      x = date,\n      y = benefits_per_household,\n      tooltip = paste0(\n        lubridate::month(monthno, label = T),\n        \" \",\n        year,\n        \"&lt;br&gt;\",\n        \"Benefits per household: \",\n        scales::dollar(benefits_per_household),\n        \"&lt;br&gt;\"\n      )\n    ),\n    col = \"transparent\",\n    na.rm = TRUE\n  ) +\n  geom_line_interactive(\n    aes(\n      x = date,\n      y = round(benperp, digits = 2),\n      group = 1\n    ),\n    na.rm = TRUE,\n    col = nord_silver[1],\n    linewidth = 1\n  ) +\n  geom_point_interactive(aes(\n    x = date,\n    y = round(benperp, digits = 2),\n    tooltip = paste0(\n      lubridate::month(monthno, label = T),\n      \" \",\n      year,\n      \"&lt;br&gt;\",\n      \"Benefits per person: \",\n      scales::dollar(benperp),\n      \"&lt;br&gt;\"\n    )\n  ),\n  na.rm = TRUE,\n  col = \"transparent\") +\n  custom_style3() +\n  scale_y_continuous(labels = scales::dollar, name = NULL) +\n  labs(title = \"Benefit Amounts Overtime per Household and per Person\", x = NULL)\n\n\n\n\n\nggiraph::girafe(ggobj = fig2) %&gt;% \n  options_girafe()\n\n\n\n\nSource: U.S. Department of Agriculture 2024"
+  },
+  {
+    "objectID": "projects/main_viz.html#comparisons-at-the-state-and-regional-levels",
+    "href": "projects/main_viz.html#comparisons-at-the-state-and-regional-levels",
+    "title": "SNAP Data 1990-2024",
+    "section": "Comparisons at the state and regional levels",
+    "text": "Comparisons at the state and regional levels\n\n\n\nCode\nfig3 &lt;- snap_final %&gt;% \n  filter(!is.na(region_name)) %&gt;% \n  ggplot(aes(x = ym, y = pct_snapp3))+\n  geom_line(aes(group = state_abbrev),\n            alpha = 0.3, \n             col = Maizgray) +\n  geom_smooth(method = \"loess\", col = nord_silver[5])+\n  facet_wrap(~region_name, \n             nrow = 1)+\n  custom_style3()+\n  scale_y_continuous(name = NULL, \n                     labels = add_pct_sign)+\n  scale_x_date(name = NULL)+\n  theme(plot.background = element_rect(fill = \"#F0F0F0\"), \n        strip.background = element_rect(color =  \"#bfbfbf\",\n                                        fill = \"#bfbfbf\"), \n        strip.text = element_text(hjust = 0.5, size = 14), \n        plot.subtitle = element_text(size = 15))+\n  labs(title = \"Percent of population receiveing SNAP Benefits by US State and Region\", \n       subtitle = stringr::str_wrap(\"Each gray line shows a state in a US region while the blue line shows the average for each region.\\n \n                           Relative to other regions, people in the south are more likely to receive SNAP benefits. Despite near record high numbers of people that receive SNAP benefits, the percentage of the population that receive benefits has been on the decline since about 2014.\", \n                           width = 100))\n\n    \n\nfig3\n\n\n\n\n\nSource: U.S. Department of Agriculture 2024"
+  },
+  {
+    "objectID": "projects/main_viz.html#notes",
+    "href": "projects/main_viz.html#notes",
+    "title": "SNAP Data 1990-2024",
+    "section": "Notes",
+    "text": "Notes\nData was sourced from Harvard Dataverse. Ten year state and national population data used to calculate the percentage of the population that receives SNAP benefits was obtained from the USDA. There were some irregularities in the data where a large jump or decline (&gt; 40%) in participation rates in a particular month is followed by a large drop-off or jump (&gt; 40%) in the next month. In cases where there were such large irregularities between two consecutive months, observations were set to missing. The code for the project is available on github."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Mikyas Duga",
@@ -26,5 +61,12 @@
     "title": "Mikyas Duga",
     "section": "Experience",
     "text": "Experience\nBoardSource | Data Analyst | August 2022 - present\nRutgers Institute for Health, Health Care Policy & Aging Research | Graduate Research Assistant | Feb 2022 - May 2022"
+  },
+  {
+    "objectID": "projects/npcomp_2022.html",
+    "href": "projects/npcomp_2022.html",
+    "title": "Nonprofit Compensation Dashboard",
+    "section": "",
+    "text": "This dashboard allows users to explore individual compensation in nonprofit organizations for executives, board members and other highly compensated positions. The data is sourced from Form 990 IRS data released in 2024. Although this data is publicly available, it’s large, unstructured, and requires considerable cleanup.\nData in this application is limited to the common job titles reported by nonprofits at least fifty times. Individuals who performed their roles as volunteers, those whose compensation was below $1,000 per year and those who served for only part of the year were excluded.\nShiny app"
   }
 ]

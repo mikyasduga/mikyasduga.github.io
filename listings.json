@@ -1,6 +1,9 @@
 [
   {
     "listing": "/projects/index.html",
-    "items": []
+    "items": [
+      "/projects/npcomp_2022.html",
+      "/projects/main_viz.html"
+    ]
   }
 ]
