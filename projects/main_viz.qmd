@@ -30,7 +30,9 @@ extrafont::loadfonts(quiet = FALSE)
 library(showtext)
 
 sysfonts::font_add("Montserrat",
-                   "fonts/Montserrat/static/Montserrat-Regular.ttf")
+                   "fonts/Montserrat/static/Montserrat-Regular.ttf", 
+                   bold = "fonts/Montserrat/static/Montserrat-Bold.ttf", 
+                   italic = "fonts/Montserrat/static/Montserrat-Italic.ttf")
 
 
 showtext::showtext_auto()
@@ -152,7 +154,7 @@ ggiraph::girafe(ggobj = fig2) %>%
 ## Comparisons at the state and regional levels
 
 ::: column-body-outset
-```{r, fig.width=10, fig.height=8, fig.cap=mysource}
+```{r, out.width='100%', fig.cap=mysource}
 
 
 fig3 <- snap_final %>% 
@@ -172,11 +174,12 @@ fig3 <- snap_final %>%
         strip.background = element_rect(color =  "#bfbfbf",
                                         fill = "#bfbfbf"), 
         strip.text = element_text(hjust = 0.5, size = 14), 
-        plot.subtitle = element_text(size = 15))+
+        plot.subtitle = element_text(size = 16), 
+        plot.title = element_text(size = 17))+
   labs(title = "Percent of population receiveing SNAP Benefits by US State and Region", 
        subtitle = stringr::str_wrap("Each gray line shows a state in a US region while the blue line shows the average for each region.\n 
                            Relative to other regions, people in the south are more likely to receive SNAP benefits. Despite near record high numbers of people that receive SNAP benefits, the percentage of the population that receive benefits has been on the decline since about 2014.", 
-                           width = 100))
+                           width = 120))
 
 	
 
