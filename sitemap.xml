@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mikyasduga.github.io/resume/index.html</loc>
-    <lastmod>2025-02-26T01:30:45.775Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mikyasduga.github.io/projects/main_viz.html</loc>
-    <lastmod>2025-02-26T01:30:45.772Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mikyasduga.github.io/index.html</loc>
-    <lastmod>2025-02-26T01:30:45.724Z</lastmod>
-  </url>
-  <url>
     <loc>https://mikyasduga.github.io/projects/npcomp_2022.html</loc>
-    <lastmod>2025-02-26T01:30:45.773Z</lastmod>
+    <lastmod>2025-02-28T20:00:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://mikyasduga.github.io/projects/index.html</loc>
-    <lastmod>2025-02-26T01:30:45.772Z</lastmod>
+    <lastmod>2025-02-28T20:00:53.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mikyasduga.github.io/index.html</loc>
+    <lastmod>2025-02-28T20:00:53.726Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mikyasduga.github.io/resume/index.html</loc>
+    <lastmod>2025-02-28T20:00:53.780Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mikyasduga.github.io/projects/main_viz.html</loc>
+    <lastmod>2025-02-28T20:00:53.776Z</lastmod>
   </url>
 </urlset>
